@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import ToDoForm from './ToDoForm'
 import Todo from './Todo';
 
-function TodoList() {
+function TodoList({header}) {
    const [todos, setToDos] = useState([]);
    const [wantForm, setWantForm] = useState(false)
 
@@ -37,7 +37,7 @@ function TodoList() {
 
    return (
        <div>
-           <h1>Whats the plan for today?</h1>
+           <h1>{header}</h1>
            <button onClick={formToggle}>Add item</button>
            {wantForm &&<ToDoForm onSubmit={addTodo}/>}
            <Todo 

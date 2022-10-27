@@ -3,7 +3,9 @@ import TodoList from "./Components/TodoList";
 function App() {
   return (
     <div>
-      <TodoList />
+      <TodoList header = "Education"/>
+      <TodoList header = "skills"/>
+      <TodoList header = "Projects"/>
     </div>
   );
 }
