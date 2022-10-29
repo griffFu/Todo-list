@@ -36,15 +36,17 @@ function TodoList({header}) {
    }
 
    return (
-       <div>
+       <div className='flex flex-col'>
            <h1>{header}</h1>
-           <button onClick={formToggle}>Add item</button>
            {wantForm &&<ToDoForm onSubmit={addTodo}/>}
            <Todo 
             todos={todos}
             updateTodo = {updateTodo}
             removeTodo = {removeTodo}
            />
+           <div>
+           <button className='bg-red-400' onClick={formToggle}>Add item</button>
+           </div>
        </div>
    )
 }

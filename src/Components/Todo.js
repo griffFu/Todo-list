@@ -25,14 +25,18 @@ function Todo({todos, updateTodo, removeTodo}) {
 
     return todos.map((todo,index) =>(
         <div>
-            <div>
-                {todo.text}
-                <RiCloseCircleLine 
-                    onClick={() => removeTodo(todo.id)}
-                />
-                <TiEdit 
-                    onClick={() => setEdit({id: todo.id, value: todo.text})}
-                />
+            <div className='flex justify-between'>
+                <div>
+                    {todo.text}
+                </div>
+                <div>
+                    <RiCloseCircleLine 
+                        onClick={() => removeTodo(todo.id)}
+                    />
+                    <TiEdit 
+                        onClick={() => setEdit({id: todo.id, value: todo.text})}
+                    />
+                </div>
             </div>
         </div>
 
