@@ -3,13 +3,16 @@ import ToDoForm from './ToDoForm'
 import Todo from './Todo';
 
 function TodoList({header}) {
-   const [todos, setToDos] = useState([]);
+   const [todos, setToDos] = useState([{
+       degree: "",
+       degreeDesc: "",
+}]);
    const [wantForm, setWantForm] = useState(false)
 
    const addTodo = todo => {
-       if(!todo.text || /^\s*$/.test(todo.text)){
-           return;
-       }
+      // if(!todo.text || /^\s*$/.test(todo.text)){
+      //     return;
+       //}
 
        const newTodos = [todo, ...todos]
 
@@ -18,9 +21,10 @@ function TodoList({header}) {
        setWantForm(!wantForm);
    }
    const updateTodo = (todoID, newValue) => {
-       if(!newValue.test || /^\s*$/.test(newValue.text)){
+       /*if(!newValue.test || /^\s*$/.test(newValue.text)){
            return;
        }
+       */
        
        setToDos(prev => prev.map(item => (item.id === todoID ? newValue : item)));
    }

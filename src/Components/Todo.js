@@ -7,14 +7,16 @@ import { TiEdit }  from 'react-icons/ti'
 function Todo({todos, updateTodo, removeTodo}) {
     const [edit,setEdit] = useState({
         id:null,
-        value: ''
+        degree: '',
+        degreeDesc: '',
     })
 
-    const submitUpdate = value => {
-        updateTodo(edit.id,value);
+    const submitUpdate = degree => {
+        updateTodo(edit.id,degree);
         setEdit({
             id: null,
-            value: ''
+            degree: '',
+            degreeDesc: '',
         });
     };
 
@@ -27,14 +29,17 @@ function Todo({todos, updateTodo, removeTodo}) {
         <div>
             <div className='flex justify-between'>
                 <div>
-                    {todo.text}
+                    {todo.degree}
+                </div>
+                <div>
+                    {todo.degreeDesc}
                 </div>
                 <div>
                     <RiCloseCircleLine 
                         onClick={() => removeTodo(todo.id)}
                     />
                     <TiEdit 
-                        onClick={() => setEdit({id: todo.id, value: todo.text})}
+                        onClick={() => setEdit({id: todo.id, degree: todo.degree, degreeDesc: todo.degreeDesc})}
                     />
                 </div>
             </div>
