@@ -28,11 +28,13 @@ function Todo({todos, updateTodo, removeTodo}) {
     return todos.map((todo,index) =>(
         <div>
             <div className='flex justify-between'>
-                <div>
-                    {todo.degree}
-                </div>
-                <div>
-                    {todo.degreeDesc}
+                <div className='flex flex-col'>
+                    <div key={index}>
+                        {todo.degree}
+                    </div>
+                    <div>
+                        {todo.degreeDesc}
+                    </div>
                 </div>
                 <div>
                     <RiCloseCircleLine 

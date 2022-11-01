@@ -10,9 +10,6 @@ function ToDoForm(props) {
       {degree:"",
       degreeDesc:""})
 
-   
-  
-
    const handleChange = (e) => {
      const value = e.target.value;
      setEducationInfo({
@@ -37,17 +34,20 @@ function ToDoForm(props) {
    return (
      <div>
          <form onSubmit={handleSubmit}>
+            <label For="degree">Education</label>
             <input 
                 type="text" 
-                placeholder='Add a todo' 
+                placeholder='Education' 
                 value={educationInfo.degree} 
                 name ="degree"
                 onChange={handleChange}
+           
                 
             />
+            <label For="degree">Description</label>
             <input 
                 type="text" 
-                placeholder='Add a todo' 
+                placeholder='Description' 
                 value={educationInfo.degreeDesc} 
                 name ="degreeDesc"
                 onChange={handleChange}

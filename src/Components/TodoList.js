@@ -3,22 +3,21 @@ import ToDoForm from './ToDoForm'
 import Todo from './Todo';
 
 function TodoList({header}) {
-   const [todos, setToDos] = useState([{
-       degree: "",
-       degreeDesc: "",
-}]);
+   const [todos, setToDos] = useState([
+       
+]);
    const [wantForm, setWantForm] = useState(false)
 
    const addTodo = todo => {
-      // if(!todo.text || /^\s*$/.test(todo.text)){
-      //     return;
-       //}
-
+        if(!todo.degree || /^\s*$/.test(todo.degree)){
+           return;
+       }
+       else{
        const newTodos = [todo, ...todos]
-
        setToDos(newTodos)
        console.log(...todos);
        setWantForm(!wantForm);
+       }
    }
    const updateTodo = (todoID, newValue) => {
        /*if(!newValue.test || /^\s*$/.test(newValue.text)){
@@ -40,8 +39,9 @@ function TodoList({header}) {
    }
 
    return (
-       <div className='flex flex-col'>
+       <div className='flex flex-col py-4'>
            <h1>{header}</h1>
+           <span className='w-full p-0.5 bg-black'></span>
            {wantForm &&<ToDoForm onSubmit={addTodo}/>}
            <Todo 
             todos={todos}
@@ -49,7 +49,7 @@ function TodoList({header}) {
             removeTodo = {removeTodo}
            />
            <div>
-           <button className='bg-red-400' onClick={formToggle}>Add item</button>
+           <button className='bg-red-400 my-4' onClick={formToggle}>Add item</button>
            </div>
        </div>
    )
