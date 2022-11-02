@@ -1,4 +1,5 @@
 import TodoList from "./Components/TodoList";
+import PersonalInfo from "./Components/PersonalInfo";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       </div>
       <div className="flex-grow flex justify-center align-center bg-zinc-500">
         <div className="bg-white m-6 p-20 flex flex-col w-6/12">
+          <PersonalInfo />
           <TodoList header = "Education"/>
           <TodoList header = "Skills"/>
           <TodoList header = "Projects"/>

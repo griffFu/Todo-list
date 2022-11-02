@@ -33,28 +33,30 @@ function ToDoForm(props) {
 
    return (
      <div>
-         <form onSubmit={handleSubmit}>
-            <label For="degree">Education</label>
-            <input 
-                type="text" 
-                placeholder='Education' 
-                value={educationInfo.degree} 
-                name ="degree"
-                onChange={handleChange}
-           
-                
-            />
-            <label For="degree">Description</label>
-            <input 
-                type="text" 
-                placeholder='Description' 
-                value={educationInfo.degreeDesc} 
-                name ="degreeDesc"
-                onChange={handleChange}
-       
-                
-            />
-            <button>Add todo</button>
+         <form classname="w-full max-w-lg" onSubmit={handleSubmit}>
+            <div className='flex flex-wrap py-4'>
+              <div className='w-full md:w-1/2'>
+                <label className='block' For="degree">{props.header}</label>
+                <input className='block bg-gray-200'
+                    type="text" 
+                    placeholder='Education' 
+                    value={educationInfo.degree} 
+                    name ="degree"
+                    onChange={handleChange}     
+                />
+              </div>
+              <div className='w-full md:w-1/2'>
+                <label className='block' For="degree">Description</label>
+                <input className='block bg-gray-200'
+                    type="text" 
+                    placeholder='Description' 
+                    value={educationInfo.degreeDesc} 
+                    name ="degreeDesc"
+                    onChange={handleChange} 
+                />
+              </div>
+            </div>
+            <button className='bg-gray-500 p-2 rounded-md'>Add Education</button>
          </form>
      </div>
    )

@@ -42,14 +42,14 @@ function TodoList({header}) {
        <div className='flex flex-col py-4'>
            <h1>{header}</h1>
            <span className='w-full p-0.5 bg-black'></span>
-           {wantForm &&<ToDoForm onSubmit={addTodo}/>}
+           {wantForm &&<ToDoForm header={header} onSubmit={addTodo}/>}
            <Todo 
             todos={todos}
             updateTodo = {updateTodo}
             removeTodo = {removeTodo}
            />
            <div>
-           <button className='bg-red-400 my-4' onClick={formToggle}>Add item</button>
+           <button className='bg-gray-400 my-4 p-2 rounded-md' onClick={formToggle}>Add item</button>
            </div>
        </div>
    )
