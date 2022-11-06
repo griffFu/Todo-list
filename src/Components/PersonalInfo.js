@@ -20,8 +20,8 @@ function PersonalInfo() {
 
     
     return isEditable ? (
-        <div>
-            <form onSubmit={edit}>
+        <div className='flex'>
+            <form className='content-center' onSubmit={edit}>
                 <input 
                 type="text" 
                 value={firstName}
